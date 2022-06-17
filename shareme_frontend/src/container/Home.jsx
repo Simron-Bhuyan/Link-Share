@@ -8,7 +8,7 @@ import { client } from '../client';
 import logo from '../assets/logo.png';
 import Pins from './Pins';
 import { userQuery } from '../utils/data';
-import {fetchUser} from '../utils/fetchUser';
+import { fetchUser } from '../utils/fetchUser';
 
 const Home = () => {
   const [ToggleSidebar, setToggleSidebar] = useState(false);
@@ -56,13 +56,13 @@ const Home = () => {
             <Sidebar user={user && user} closeToggle={setToggleSidebar} />
           </div>
         )
-  
+
         }
       </div>
-     
+
       <div className="pb-2 flex-1 h-screen overflow-y-scroll " ref={scrollRef}>
         <Routes>
-          <Route path="/user-profile/:userId" element={Userprofile} />
+          <Route path="/user-profile/:userId" element={<Userprofile />}/>
           <Route path="/*" element={<Pins user={user && user} />} />
         </Routes>
       </div>
